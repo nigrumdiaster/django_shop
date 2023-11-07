@@ -1,5 +1,6 @@
 # **DJANGO_SHOP**
-![alt text](https://www.djangoproject.com/m/img/logos/django-logo-negative.png)
+<img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.png" alt="Django Logo" width="25%" height="25%">
+
 ***
 <h2>Technologies Used:</h2>
 <ul>
