@@ -19,6 +19,6 @@ class Home(View):
         top_products = ChiTietDonHang.objects.values('SanPham_id', 'SanPham__TenSanPham', 'SanPham__GiaBan', 'SanPham__GiaKhuyenMai', 'SanPham__PhanTramGiam', 'SanPham__AnhChinh', 'SanPham__DuongDan') \
         .annotate(count=Count('SanPham_id')) \
         .order_by('-count')[:8]
-        data = {"top_products": top_products, "sanpham": sanpham, "slide": slide, "bannertop": bannertop, "bannermid": bannermid, "bannerbottom": bannerbottom, "tintuc": tintuc, "title": "Cửa Hàng KPOP Chất Lượng, Giá Rẻ!"}
+        data = {"top_products": top_products, "sanpham": sanpham, "slide": slide, "bannertop": bannertop, "bannermid": bannermid, "bannerbottom": bannerbottom, "tintuc": tintuc, "title": "Cửa Hàng đồ ăn Chất Lượng, Giá Rẻ!"}
         return render(request, self.template_name, data)
     

@@ -42,7 +42,7 @@ class ListNews(View):
                         "chuyenmuc": chuyenmuc, 
                         "banner": banner,
                         'page_count': number_page, 
-                        "title": "Tin Tức Sao Kpop", 
+                        "title": "Tin Tức", 
                         "page": page, 
                         "pre_page": pre_page, 
                         "next_page": next_page, 
@@ -60,7 +60,7 @@ class ListNews(View):
                     "tintucmoi": tintucmoi, 
                     "chuyenmuc": chuyenmuc, 
                     "banner": banner,
-                    "title": "Tin Tức Sao Kpop", 
+                    "title": "Tin Tức", 
                 }
                 return render(request, self.template_name, data)
             except:
@@ -75,7 +75,7 @@ class ListNews(View):
                     "chuyenmuc": chuyenmuc, 
                     "banner": banner,
                     'page_count': number_page, 
-                    "title": "Tin Tức Sao Kpop", 
+                    "title": "Tin Tức", 
                     "page": 1,      
                     "len_page_count": len(number_page)
                 }

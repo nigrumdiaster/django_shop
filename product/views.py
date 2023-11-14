@@ -38,7 +38,7 @@ class Product(View):
                     if (request.GET.get('sap_xep') is not None) and request.GET.get('sap_xep').lower() == "moi":
                         sanpham = SanPham.objects.all().filter().order_by('-id')[int(start_index):int(end_index)]
                     number_page = [i for i in range(1, page_count + 1)]
-                    data = {"top_products": top_products, "sanpham": sanpham, "chuyenmuc": chuyenmuc, 'page_count': number_page, "title": "Sản Phẩm KPOP Chất Lượng, Giá Rẻ!", "page": page, "pre_page": pre_page, "next_page": next_page, "len_page_count": len(number_page)}
+                    data = {"top_products": top_products, "sanpham": sanpham, "chuyenmuc": chuyenmuc, 'page_count': number_page, "title": "Sản Phẩm đồ ăn Chất Lượng, Giá Rẻ!", "page": page, "pre_page": pre_page, "next_page": next_page, "len_page_count": len(number_page)}
                     return render(request, self.template_name, data)
             except:
                 return render(request, template_error)
@@ -53,7 +53,7 @@ class Product(View):
                     sanpham = SanPham.objects.all().filter(TenSanPham__icontains=tensanpham).order_by('GiaBan')
                 if (request.GET.get('sap_xep') is not None) and request.GET.get('sap_xep').lower() == "moi":
                     sanpham = SanPham.objects.all().filter(TenSanPham__icontains=tensanpham).order_by('-id')
-                data = {"top_products": top_products, "sanpham": sanpham, "chuyenmuc": chuyenmuc, "title": "Sản Phẩm KPOP Chất Lượng, Giá Rẻ!"}
+                data = {"top_products": top_products, "sanpham": sanpham, "chuyenmuc": chuyenmuc, "title": "Sản Phẩm đồ ăn Chất Lượng, Giá Rẻ!"}
                 return render(request, self.template_name, data)
             except:
                 return render(request, template_error)
@@ -69,7 +69,7 @@ class Product(View):
                     sanpham = SanPham.objects.all().filter(GiaBan__range=(min, max)).order_by('GiaBan')
                 if (request.GET.get('sap_xep') is not None) and request.GET.get('sap_xep').lower() == "moi":
                     sanpham = SanPham.objects.all().filter(GiaBan__range=(min, max)).order_by('-id')
-                data = {"top_products": top_products, "sanpham": sanpham, "chuyenmuc": chuyenmuc, "title": "Sản Phẩm KPOP Chất Lượng, Giá Rẻ!"}
+                data = {"top_products": top_products, "sanpham": sanpham, "chuyenmuc": chuyenmuc, "title": "Sản Phẩm đồ ăn Chất Lượng, Giá Rẻ!"}
                 return render(request, self.template_name, data)
             except:
                 return render(request, template_error)
@@ -84,7 +84,7 @@ class Product(View):
                 if (request.GET.get('sap_xep') is not None) and request.GET.get('sap_xep').lower() == "moi":
                     sanpham = SanPham.objects.all().filter().order_by('-id')[:9]
                 number_page = [i for i in range(1, page_count + 1)]
-                data = {"top_products": top_products, "sanpham": sanpham, "chuyenmuc": chuyenmuc, 'page_count': number_page, "title": "Sản Phẩm KPOP Chất Lượng, Giá Rẻ!", "page": 1, "len_page_count": len(number_page)}
+                data = {"top_products": top_products, "sanpham": sanpham, "chuyenmuc": chuyenmuc, 'page_count': number_page, "title": "Sản Phẩm đò ăn Chất Lượng, Giá Rẻ!", "page": 1, "len_page_count": len(number_page)}
                 return render(request, self.template_name, data)
             except:
                 return render(request, template_error)
