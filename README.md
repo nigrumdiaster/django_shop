@@ -35,6 +35,8 @@ The default passowrd for MySQL should be:
 <h2>Usage:</h2>
     
     python django_web_app/manage.py migrate
+Run djangoshop.sql with MySQL Workbench
+<h2>Usage:</h2>
 
     python django_web_app/manage.py runserver
     
