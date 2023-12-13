@@ -46,7 +46,7 @@ class PayCart(View):
             return render(request, template_error)
     
     def post(self, request):
-        # try:
+        try:
             phone = request.POST['sodienthoai']
             address = request.POST['diachi']
             note = request.POST['ghichu']
@@ -92,5 +92,5 @@ class PayCart(View):
             
             giohang.delete()
             return redirect('customer')
-        # except:
-        #     return render(request, template_error)
+        except:
+            return render(request, template_error)
