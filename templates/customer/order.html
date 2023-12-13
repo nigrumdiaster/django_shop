@@ -36,7 +36,6 @@
                             <thead>
                                 <th class="cart-product-image" style="width: 18%; text-align: center;">Hình Ảnh</th>
                                 <th class="cart-product-info" style="width: 18%;">Tên Sản Phẩm</th>
-                                <th class="cart-product-price" style="width: 18%; text-align: center;">Màu Sắc</th>
                                 <th class="cart-product-quantity" style="width: 18%; text-align: center;">Số Lượng</th>
                                 <th class="cart-product-subtotal" style="width: 18%; text-align: center;">Đơn Giá</th>
                                 <th class="cart-product-subtotal" style="width: 10%; text-align: center;">Tổng Tiền</th>
@@ -53,12 +52,6 @@
                                             <td class="cart-product-info">
                                                 <h6><a href="{% url 'detail_product' slug=item.SanPham.DuongDan %}"
                                                         style="width: 18%; text-align: center;">{{ item.SanPham.TenSanPham}}</a></h6>
-                                            </td>
-                                            <td class="cart-product-price" style="width: 18%; text-align: center;">
-                                                <div class="ltn__color-widget clearfix">
-                                                    <ul>
-                                                    </ul>
-                                                </div>
                                             </td>
                                             <td class="cart-product-quantity" style="width: 18%; text-align: center;">
                                                 {{ item.SoLuong }} sản phẩm
