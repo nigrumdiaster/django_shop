@@ -192,10 +192,10 @@ CREATE TABLE `auth_user` (
 -- Dumping data for table `auth_user`
 --
 
-INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$600000$PvbxoAK6qzAqPnf0I1dILq$CYLlulBACneiFPF/dgnHncbZJRjj9j++tdOrd+3qJ9k=','2023-12-13 11:17:52.225070',1,'admin','','','admin@gmail.com',1,1,'2023-11-09 10:05:53.000000');
+INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$600000$PvbxoAK6qzAqPnf0I1dILq$CYLlulBACneiFPF/dgnHncbZJRjj9j++tdOrd+3qJ9k=','2023-12-13 14:33:03.885282',1,'admin','','','admin@gmail.com',1,1,'2023-11-09 10:05:53.000000');
 INSERT INTO `auth_user` VALUES (2,'pbkdf2_sha256$600000$uHqtoHAFAWibPfCzSvy3WG$rBFixelmeAhQw46uHJiwyBlS4B1WCNo8MyjUpF2CUXk=','2023-12-12 19:43:06.627076',0,'leone','Nghia','Luong','',0,1,'2023-11-21 08:35:24.938145');
 INSERT INTO `auth_user` VALUES (3,'pbkdf2_sha256$600000$oPIJFjTWpJYYyYRsI1WEvl$NoLS6kDNJtHRKfnjXqP2AYmbLUi57G8daBS8FjW0l84=','2023-12-12 19:55:09.619147',0,'nghia','Nghia','Luong','nigrumdiaster@gmail.com',0,1,'2023-12-12 19:55:02.244201');
-INSERT INTO `auth_user` VALUES (4,'pbkdf2_sha256$600000$8XsEWVwiDWtmMA5D9RLHiy$rE9kKR7ON6GWm/KuW9qbjWIu3A1xL9V1S6Sf5HNj0H8=','2023-12-13 11:32:31.147794',0,'nghia1','Nghia','Luong','',0,1,'2023-12-13 11:13:56.232425');
+INSERT INTO `auth_user` VALUES (4,'pbkdf2_sha256$600000$8XsEWVwiDWtmMA5D9RLHiy$rE9kKR7ON6GWm/KuW9qbjWIu3A1xL9V1S6Sf5HNj0H8=','2023-12-13 14:27:51.113601',0,'nghia1','Nghia','Luong','',0,1,'2023-12-13 11:13:56.232425');
 
 --
 -- Table structure for table `auth_user_groups`
@@ -265,7 +265,7 @@ CREATE TABLE `cart_giohang` (
   KEY `cart_giohang_SanPham_id_fce07c2b_fk_product_sanpham_id` (`SanPham_id`),
   CONSTRAINT `cart_giohang_KhachHang_id_cc1f0311_fk_customer_khachhang_id` FOREIGN KEY (`KhachHang_id`) REFERENCES `customer_khachhang` (`id`),
   CONSTRAINT `cart_giohang_SanPham_id_fce07c2b_fk_product_sanpham_id` FOREIGN KEY (`SanPham_id`) REFERENCES `product_sanpham` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -351,7 +351,7 @@ CREATE TABLE `django_admin_log` (
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
   CONSTRAINT `django_admin_log_chk_1` CHECK ((`action_flag` >= 0))
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -392,6 +392,15 @@ INSERT INTO `django_admin_log` VALUES (31,'2023-12-13 11:20:34.217488','1','GYOZ
 INSERT INTO `django_admin_log` VALUES (32,'2023-12-13 12:07:08.799846','2','Asian Food',1,'[{\"added\": {}}]',10,1);
 INSERT INTO `django_admin_log` VALUES (33,'2023-12-13 12:08:55.824943','3','Mã Đơn Hàng: 3 - Khách Hàng: Nghia Luong - Tổng Tiền: 130200 - Thời Gian: 2023-12-13 12:08:01',2,'[{\"changed\": {\"fields\": [\"TrangThai\"]}}]',20,1);
 INSERT INTO `django_admin_log` VALUES (34,'2023-12-13 12:09:09.714771','3','Mã Đơn Hàng: 3 - Khách Hàng: Nghia Luong - Tổng Tiền: 130200 - Thời Gian: 2023-12-13 12:08:01',2,'[{\"changed\": {\"fields\": [\"TrangThai\"]}}]',20,1);
+INSERT INTO `django_admin_log` VALUES (35,'2023-12-13 14:16:24.810427','1','Banner Chuyên Mục: Bánh mặn',1,'[{\"added\": {}}]',13,1);
+INSERT INTO `django_admin_log` VALUES (36,'2023-12-13 14:22:04.318400','1','Banner Chuyên Mục: Bánh mặn',1,'[{\"added\": {}}]',11,1);
+INSERT INTO `django_admin_log` VALUES (37,'2023-12-13 14:24:58.298242','2','Banner Chuyên Mục: Bánh ngọt',1,'[{\"added\": {}}]',11,1);
+INSERT INTO `django_admin_log` VALUES (38,'2023-12-13 14:26:01.134688','3','Banner Chuyên Mục: Trà trái cây',1,'[{\"added\": {}}]',11,1);
+INSERT INTO `django_admin_log` VALUES (39,'2023-12-13 14:32:13.222316','1','Banner Chuyên Mục: Bánh mặn',2,'[{\"changed\": {\"fields\": [\"HinhAnh\"]}}]',13,1);
+INSERT INTO `django_admin_log` VALUES (40,'2023-12-13 14:35:38.821568','1','Banner Chuyên Mục: Bánh mặn',1,'[{\"added\": {}}]',12,1);
+INSERT INTO `django_admin_log` VALUES (41,'2023-12-13 14:35:51.579736','2','Banner Chuyên Mục: Bánh ngọt',1,'[{\"added\": {}}]',12,1);
+INSERT INTO `django_admin_log` VALUES (42,'2023-12-13 14:37:04.558810','3','Banner Chuyên Mục: Trà trái cây',1,'[{\"added\": {}}]',12,1);
+INSERT INTO `django_admin_log` VALUES (43,'2023-12-13 14:37:21.599876','3','Banner Chuyên Mục: Trà trái cây',3,'',12,1);
 
 --
 -- Table structure for table `django_content_type`
@@ -502,10 +511,14 @@ CREATE TABLE `django_session` (
 --
 
 INSERT INTO `django_session` VALUES ('0v2oalg8a7ld4pevuwuha95nhiw1v740','.eJxVjDsOwjAQBe_iGln4l7Up6XMGa-1d4wBypDipEHeHSCmgfTPzXiLitta4dV7iROIirDj9bgnzg9sO6I7tNss8t3WZktwVedAux5n4eT3cv4OKvX5rsB4HduZchlygKO-s1qAgECajvLeYQLMlcpl9JiBnFBTIwQRHaEi8P9jMN_A:1rDNTb:GLB9tHPpja76ZhQUMrPgEgQIznD_lXcOsBx__HuK8ug','2023-12-27 11:32:31.155825');
+INSERT INTO `django_session` VALUES ('30ayi36r662utsn4oc5cwnv90gdij13q','.eJxVjDkOwjAUBe_iGlnxhjElPWew_uKPA8iR4qRC3B0ipYD2zcx7qQzrUvPay5xHVmdl1OF3Q6BHaRvgO7TbpGlqyzyi3hS9066vE5fnZXf_Dir0-q09pCFYERORDBAMxMiMNjAco5yKdyX4aDyKQ3ZOMMVkyDoPhhAkqfcHDxQ5DQ:1rDPva:w4n3RFkdtpW3gzpMQbPbWUomnRa4dK62y_NKN0VNpgI','2023-12-27 14:09:34.322043');
+INSERT INTO `django_session` VALUES ('g8mjbuiaig3qbm5hn6nzw560c7t50afw','.eJxVjDsOwjAQBe_iGln4l7Up6XMGa-1d4wBypDipEHeHSCmgfTPzXiLitta4dV7iROIirDj9bgnzg9sO6I7tNss8t3WZktwVedAux5n4eT3cv4OKvX5rsB4HduZchlygKO-s1qAgECajvLeYQLMlcpl9JiBnFBTIwQRHaEi8P9jMN_A:1rDQDH:ky4HwA56NB2YJZH8AxYa89em-170ugdglor57_z6fnk','2023-12-27 14:27:51.123574');
 INSERT INTO `django_session` VALUES ('j7gewwj4nrimd2hjmnbiso8khdsl6dq6','.eJxVjDkOwjAUBe_iGlnxhjElPWew_uKPA8iR4qRC3B0ipYD2zcx7qQzrUvPay5xHVmdl1OF3Q6BHaRvgO7TbpGlqyzyi3hS9066vE5fnZXf_Dir0-q09pCFYERORDBAMxMiMNjAco5yKdyX4aDyKQ3ZOMMVkyDoPhhAkqfcHDxQ5DQ:1rDNDe:-Yy_72gMykRcl4HatF6PKwiUjtRfpvDyVKVeZnbmzLc','2023-12-27 11:16:02.400751');
 INSERT INTO `django_session` VALUES ('smiswsj27us7kphra58i0m8eaezxrit0','.eJxVjMsOwiAQRf-FtSFYHmVcuu83kGEGpGogKe3K-O_apAvd3nPOfYmA21rC1tMSZhYXocXpd4tIj1R3wHestyap1XWZo9wVedAup8bpeT3cv4OCvXxrdOQ5QrbJZFZIgDQYDeysiU4xD6jAw5n86Kz2EUflLHvrtTI6E2Tx_gD88zfq:1rD8qT:K7GkRJG_bejVSGd9uU9uT-GQh3Old72JyWrkj5wj2zA','2023-12-26 19:55:09.629301');
 INSERT INTO `django_session` VALUES ('td7c8ag5txa806j1m245z5i7s50tvzcm','.eJxVjDkOwjAUBe_iGlnxhjElPWew_uKPA8iR4qRC3B0ipYD2zcx7qQzrUvPay5xHVmdl1OF3Q6BHaRvgO7TbpGlqyzyi3hS9066vE5fnZXf_Dir0-q09pCFYERORDBAMxMiMNjAco5yKdyX4aDyKQ3ZOMMVkyDoPhhAkqfcHDxQ5DQ:1rDNFQ:CwfEwfbKHsT0-4enIH94txH5COwsPo6O5FHzFoZJaOk','2023-12-27 11:17:52.233050');
 INSERT INTO `django_session` VALUES ('ufkq0xk59e5gzdbutczwgxyipc24aowi','.eJxVjDsOwjAQBe_iGlnRkrUdSnrOEO3HxgFkS3FSRdwdIqWA9s3M28xI65LHtcV5nNRcDJjT78Ykz1h2oA8q92qllmWe2O6KPWizt6rxdT3cv4NMLX9rwSQ9CvVAGJynQdgzgzrFFLwToCTASlEdDp0X8T3G0LEHUOrOaN4fEBY4wA:1r5MEL:PlL-qwUEuDdVLlsfcx9i1SiwM_bh1iHZbEwzy0pIVKk','2023-12-05 08:35:37.418035');
+INSERT INTO `django_session` VALUES ('yntzn2w64nz9cs6wfhmn3ikehsmo9t98','.eJxVjDkOwjAUBe_iGlnxhjElPWew_uKPA8iR4qRC3B0ipYD2zcx7qQzrUvPay5xHVmdl1OF3Q6BHaRvgO7TbpGlqyzyi3hS9066vE5fnZXf_Dir0-q09pCFYERORDBAMxMiMNjAco5yKdyX4aDyKQ3ZOMMVkyDoPhhAkqfcHDxQ5DQ:1rDQIJ:RSHX0LkJrqXEN4Sq6r9KZ0Cy1edGwy00w9DLx4lX4Bg','2023-12-27 14:33:03.895266');
+INSERT INTO `django_session` VALUES ('ysc5yl08oppuztactcjnx5497qwhc3tb','.eJxVjDkOwjAUBe_iGlnxhjElPWew_uKPA8iR4qRC3B0ipYD2zcx7qQzrUvPay5xHVmdl1OF3Q6BHaRvgO7TbpGlqyzyi3hS9066vE5fnZXf_Dir0-q09pCFYERORDBAMxMiMNjAco5yKdyX4aDyKQ3ZOMMVkyDoPhhAkqfcHDxQ5DQ:1rDQ0X:VoghnqBZo2boaJX1R_RJhJCmFtmtGa5dR5HC89GOiUg','2023-12-27 14:14:41.169322');
 INSERT INTO `django_session` VALUES ('zjl6zny2o5qdlmglf845h3pi2m4rt52h','.eJxVjDkOwjAUBe_iGlnxhjElPWew_uKPA8iR4qRC3B0ipYD2zcx7qQzrUvPay5xHVmdl1OF3Q6BHaRvgO7TbpGlqyzyi3hS9066vE5fnZXf_Dir0-q09pCFYERORDBAMxMiMNjAco5yKdyX4aDyKQ3ZOMMVkyDoPhhAkqfcHDxQ5DQ:1r11vt:yAgS9gBJb4pEjgcSgmBJPLLQpE56RZPYfTus_7ST7WM','2023-11-23 10:06:41.263817');
 
 --
@@ -558,7 +571,7 @@ CREATE TABLE `order_chitietdonhang` (
   KEY `order_chitietdonhang_SanPham_id_c606706e_fk_product_sanpham_id` (`SanPham_id`),
   CONSTRAINT `order_chitietdonhang_DonHang_id_1115646e_fk_order_donhang_id` FOREIGN KEY (`DonHang_id`) REFERENCES `order_donhang` (`id`),
   CONSTRAINT `order_chitietdonhang_SanPham_id_c606706e_fk_product_sanpham_id` FOREIGN KEY (`SanPham_id`) REFERENCES `product_sanpham` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -574,6 +587,10 @@ INSERT INTO `order_chitietdonhang` VALUES (6,49000,1,49000,2,3);
 INSERT INTO `order_chitietdonhang` VALUES (7,30000,1,30000,2,1);
 INSERT INTO `order_chitietdonhang` VALUES (8,45000,1,45000,3,5);
 INSERT INTO `order_chitietdonhang` VALUES (9,49000,1,49000,3,3);
+INSERT INTO `order_chitietdonhang` VALUES (10,45000,1,45000,4,5);
+INSERT INTO `order_chitietdonhang` VALUES (11,49000,1,49000,4,3);
+INSERT INTO `order_chitietdonhang` VALUES (12,69000,1,69000,4,6);
+INSERT INTO `order_chitietdonhang` VALUES (13,30000,1,30000,4,1);
 
 --
 -- Table structure for table `order_donhang`
@@ -594,7 +611,7 @@ CREATE TABLE `order_donhang` (
   PRIMARY KEY (`id`),
   KEY `order_donhang_KhachHang_id_593be4ef_fk_customer_khachhang_id` (`KhachHang_id`),
   CONSTRAINT `order_donhang_KhachHang_id_593be4ef_fk_customer_khachhang_id` FOREIGN KEY (`KhachHang_id`) REFERENCES `customer_khachhang` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -604,6 +621,7 @@ CREATE TABLE `order_donhang` (
 INSERT INTO `order_donhang` VALUES (1,'0954092123','Saigon',326550,'','2023-12-13 09:45:50.877940','cxl',2);
 INSERT INTO `order_donhang` VALUES (2,'0954092123','Saigon Gateway, XLHN',234150,'','2023-12-13 09:48:19.386849','cxl',2);
 INSERT INTO `order_donhang` VALUES (3,'0954092123','2131',130200,'','2023-12-13 12:08:01.522856','khh',3);
+INSERT INTO `order_donhang` VALUES (4,'0954092123','None',234150,'','2023-12-13 13:02:45.167670','cxl',3);
 
 --
 -- Table structure for table `product_chuyenmuc`
@@ -690,13 +708,14 @@ CREATE TABLE `website_bannerbottom` (
   PRIMARY KEY (`id`),
   KEY `website_bannerbottom_ChuyenMuc_id_46c47830_fk_product_c` (`ChuyenMuc_id`),
   CONSTRAINT `website_bannerbottom_ChuyenMuc_id_46c47830_fk_product_c` FOREIGN KEY (`ChuyenMuc_id`) REFERENCES `product_chuyenmuc` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `website_bannerbottom`
 --
 
+INSERT INTO `website_bannerbottom` VALUES (1,'uploads/food-drink-banner.jpg',1,1);
 
 --
 -- Table structure for table `website_bannermid`
@@ -713,13 +732,15 @@ CREATE TABLE `website_bannermid` (
   PRIMARY KEY (`id`),
   KEY `website_bannermid_ChuyenMuc_id_7759a49b_fk_product_chuyenmuc_id` (`ChuyenMuc_id`),
   CONSTRAINT `website_bannermid_ChuyenMuc_id_7759a49b_fk_product_chuyenmuc_id` FOREIGN KEY (`ChuyenMuc_id`) REFERENCES `product_chuyenmuc` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `website_bannermid`
 --
 
+INSERT INTO `website_bannermid` VALUES (1,'uploads/banhman2.jpg',1,1);
+INSERT INTO `website_bannermid` VALUES (2,'uploads/banhngot2.jpg',1,3);
 
 --
 -- Table structure for table `website_bannertop`
@@ -736,13 +757,16 @@ CREATE TABLE `website_bannertop` (
   PRIMARY KEY (`id`),
   KEY `website_bannertop_ChuyenMuc_id_d2d3bac7_fk_product_chuyenmuc_id` (`ChuyenMuc_id`),
   CONSTRAINT `website_bannertop_ChuyenMuc_id_d2d3bac7_fk_product_chuyenmuc_id` FOREIGN KEY (`ChuyenMuc_id`) REFERENCES `product_chuyenmuc` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `website_bannertop`
 --
 
+INSERT INTO `website_bannertop` VALUES (1,'uploads/banhman.png',1,1);
+INSERT INTO `website_bannertop` VALUES (2,'uploads/banhngot.png',1,3);
+INSERT INTO `website_bannertop` VALUES (3,'uploads/thucuong.png',1,2);
 
 --
 -- Table structure for table `website_loaithongtin`
