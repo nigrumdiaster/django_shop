@@ -122,15 +122,6 @@
                                                 <span>{{ item.GiaBan }}đ</span>
                                                 <del>{{ item.GiaKhuyenMai }}đ</del>
                                             </div>
-                                            <div class="product-ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="icon-star"></i></a></li>
-                                                    <li><a href="#"><i class="icon-star"></i></a></li>
-                                                    <li><a href="#"><i class="icon-star"></i></a></li>
-                                                    <li><a href="#"><i class="icon-star"></i></a></li>
-                                                    <li><a href="#"><i class="icon-star"></i></a></li>
-                                                </ul>
-                                            </div>
                                             <div class="product-brief">
                                                 <p>{{ item.MoTaNgan }}</p>
                                             </div>
@@ -203,11 +194,11 @@
                             <div class="price_filter">
                                 Từ giá: 
                                 <div >
-                                    <input type="text" name="min" placeholder="100000" style="color: black;" required> 
+                                    <input type="text" name="min" placeholder="10000" style="color: black;" required> 
                                 </div>
                                 Đến giá:
                                 <div >
-                                    <input type="text" name="max" placeholder="500000" style="color: black;" required> 
+                                    <input type="text" name="max" placeholder="50000" style="color: black;" required> 
                                 </div>
                             </div>
                         </div>
@@ -236,15 +227,6 @@
                                             <a href="{{ base_url }}/san-pham/{{ item.SanPham__DuongDan }}"><img src="{{ base_url }}/media/{{ item.SanPham__AnhChinh }}" alt="#"></a>
                                         </div>
                                         <div class="top-rated-product-info">
-                                            <div class="product-ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="icon-star"></i></a></li>
-                                                    <li><a href="#"><i class="icon-star"></i></a></li>
-                                                    <li><a href="#"><i class="icon-star"></i></a></li>
-                                                    <li><a href="#"><i class="icon-star"></i></a></li>
-                                                    <li><a href="#"><i class="icon-star"></i></a></li>
-                                                </ul>
-                                            </div>
                                             <h6><a href="{{ base_url }}/san-pham/{{ item.SanPham__DuongDan }}">{{ item.SanPham__TenSanPham }}</a></h6>
                                             <div class="product-price">
                                                 <span>{{ item.SanPham__GiaBan }}đ</span>
