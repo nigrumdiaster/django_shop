@@ -9,14 +9,22 @@
 .product-img {
     position: relative;
     overflow: hidden;
+    width: 100%;
+    padding-top: 100%;
 }
 .product-img a {
     display: block;
 }
 .product-img img {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: all 3.5s ease 0s;
     z-index: -1;
+    image-rendering: -webkit-optimize-contrast;
 }
 .ltn__product-item {
     &:hover {
@@ -766,14 +774,27 @@
 
 .ltn__shop-details-img-gallery-2 {
     .ltn__shop-details-small-img {
-        margin-top: 20px;
-        margin-top: -5px;
+        margin-top: 0;
         margin-bottom: -5px;
-        width: 118px;
+        width: 90px;
         float: left;
         margin-right: 10px;
         .single-small-img {
-            padding: 5px 0px;
+            margin: 8px 0px;
+            width: 100%;
+            padding-top: 100%;
+            position: relative;
+            &:first-child{
+                margin-top: 0;
+            }
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+            }
             &.slick-current {
                 img {
                     border: 1px solid var(--ltn__secondary-color);
@@ -784,6 +805,19 @@
     }
     .ltn__shop-details-large-img {
         overflow: hidden;
+        .single-large-img{
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+            }
+        }
     }
     .slick-arrow-2 .slick-arrow {
         height: 35px;

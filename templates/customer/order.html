@@ -35,7 +35,7 @@
                         <table class="table">
                             <thead>
                                 <th class="cart-product-image" style="width: 18%; text-align: center;">Hình Ảnh</th>
-                                <th class="cart-product-info" style="width: 18%;">Tên Sản Phẩm</th>
+                                <th class="cart-product-info" style="width: 18%; text-align: center;">Tên Sản Phẩm</th>
                                 <th class="cart-product-quantity" style="width: 18%; text-align: center;">Số Lượng</th>
                                 <th class="cart-product-subtotal" style="width: 18%; text-align: center;">Đơn Giá</th>
                                 <th class="cart-product-subtotal" style="width: 10%; text-align: center;">Tổng Tiền</th>
@@ -44,21 +44,21 @@
                                 {% if chitietdonhang.count >= 1%}
                                     {% for item in chitietdonhang %}
                                         <tr>
-                                            <td class="cart-product-image">
+                                            <td class="cart-product-image" style="width: 18%; text-align: center;">
                                                 <a href="{% url 'detail_product' slug=item.SanPham.DuongDan %}"
-                                                    style="width: 18%; text-align: center;"><img
+                                                   ><img
                                                         src="{{ item.SanPham.AnhChinh.url }}" alt="#"></a>
                                             </td>
-                                            <td class="cart-product-info">
-                                                <h6><a href="{% url 'detail_product' slug=item.SanPham.DuongDan %}"
-                                                        style="width: 18%; text-align: center;">{{ item.SanPham.TenSanPham}}</a></h6>
+                                            <td class="cart-product-info" style="width: 18%; text-align: center;">
+                                                <h6 class="cart-product-name"><a href="{% url 'detail_product' slug=item.SanPham.DuongDan %}"
+                                                       x>{{ item.SanPham.TenSanPham}}</a></h6>
                                             </td>
                                             <td class="cart-product-quantity" style="width: 18%; text-align: center;">
-                                                {{ item.SoLuong }} sản phẩm
+                                                <span class="cart-product-quantity-content">{{ item.SoLuong }} sản phẩm</span>
                                             </td>
-                                            <td class="cart-product-subtotal" style="width: 18%; text-align: center;"><p class="soluong" style="font-weight: 400;">{{item.GiaBan }} x {{ item.SoLuong }}</p> </td>
+                                            <td class="cart-product-subtotal" style="width: 18%; text-align: center;"><p class="soluong cart-product-subtotal-content" style="font-weight: 400;">{{item.GiaBan }} x {{ item.SoLuong }}</p> </td>
                                             <td class="cart-product-subtotal" style="width: 10%; text-align: center;">
-                                                <p style="font-weight: 500;"> {{ item.GiaTien }}đ</p>
+                                                <p style="font-weight: 500; margin-bottom: 0;"> {{ item.GiaTien }}đ</p>
                                             </td>
                                         </tr>
                                     {% endfor %}

@@ -78,7 +78,7 @@
                         {% if prev_news %}
                             <div class="blog-prev col-lg-6">
                                 <div class="blog-prev-next-img">
-                                    <a href="{% url 'detail_news' slug=prev_news.DuongDan %}"><img style="width: 100%; height: 72px;" src="{{ prev_news.AnhChinh.url }}" alt="Image"></a>
+                                    <a href="{% url 'detail_news' slug=prev_news.DuongDan %}"><img src="{{ prev_news.AnhChinh.url }}" alt="Image"></a>
                                 </div>
                                 <div class="blog-prev-next-info">
                                     <p>Bài trước</p>
@@ -94,7 +94,7 @@
                                     <h3 class="ltn__blog-title animated fadeIn"><a href="{% url 'detail_news' slug=next_news.DuongDan %}"> {{ next_news.TieuDe }}</a></h3>
                                 </div>
                                 <div class="blog-prev-next-img">
-                                    <a href="{% url 'detail_news' slug=next_news.DuongDan %}"><img style="width: 100%; height: 72px;" src="{{ next_news.AnhChinh.url }}" alt="Image"></a>
+                                    <a href="{% url 'detail_news' slug=next_news.DuongDan %}"><img src="{{ next_news.AnhChinh.url }}" alt="Image"></a>
                                 </div>
                             </div>
                         {% endif %}
@@ -162,7 +162,7 @@
                                 <div class="popular-post-widget-item clearfix">
                                     <div class="popular-post-widget-img">
                                         <a href="{% url 'detail_news' slug=item.DuongDan %}"><img
-                                                style="width: 80px; height: 80px;" src="{{ item.AnhChinh.url }}"
+                                                src="{{ item.AnhChinh.url }}"
                                                 alt="#"></a>
                                     </div>
                                     <div class="popular-post-widget-brief">
@@ -179,7 +179,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <h6 class="ltn__blog-title blog-title-line"><a
+                                        <h6 class="ltn__blog-title blog-title-line"><a class="text-truncate-line-2"
                                                 href="{% url 'detail_news' slug=item.DuongDan %}">{{ item.TieuDe }}</a>
                                         </h6>
                                     </div>
@@ -203,7 +203,7 @@
                     {% for item in banner %}
                     <!-- Banner Widget -->
                     <div class="widget ltn__banner-widget">
-                        <a href="{% url 'detail_category' slug=item.ChuyenMuc.DuongDan %}"><img style="height: 265px;"
+                        <a href="{% url 'detail_category' slug=item.ChuyenMuc.DuongDan %}"><img
                                 src="{{ item.HinhAnh.url }}" alt="Banner Image"></a>
                     </div>
                     {% endfor %}

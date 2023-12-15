@@ -43,22 +43,22 @@
                                 {% if giohang.count >= 1%}
                                     {% for item in giohang %}
                                         <tr>
-                                            <td class="cart-product-image">
+                                            <td class="cart-product-image" style="width: 18%; text-align: center;"s>
                                                 <a href="{% url 'detail_product' slug=item.SanPham.DuongDan %}"
-                                                    style="width: 18%; text-align: center;"><img
+                                                    ><img
                                                         src="{{ item.SanPham.AnhChinh.url }}" alt="#"></a>
                                             </td>
-                                            <td class="cart-product-info">
-                                                <h6><a href="{% url 'detail_product' slug=item.SanPham.DuongDan %}"
-                                                        style="width: 18%; text-align: center;">{{ item.SanPham.TenSanPham}}</a></h6>
+                                            <td class="cart-product-info" style="width: 18%; text-align: center;">
+                                                <h6 class="cart-product-name"><a href="{% url 'detail_product' slug=item.SanPham.DuongDan %}"
+                                                        >{{ item.SanPham.TenSanPham}}</a></h6>
                                             </td>
                                             <td class="cart-product-quantity" style="width: 18%; text-align: center;">
-                                                <div style="height: 50px; line-height: 43px; text-align: center;">
+                                                <div class="cart-product-quantity-content">
                                                     <input type="number" min="1" value="{{ item.SoLuong }}" id="myInput" name="qtybutton"
-                                                    class="{{ item.id}} cart-plus-minus-box" style="border: solid 1.5px #9d9d9d; width: 50%; border-radius: 5px; text-align: center;">
+                                                    class="{{ item.id}} cart-plus-minus-box" style="border: solid 1.5px #9d9d9d; width: 30%; border-radius: 5px; text-align: center;">
                                                 </div>
                                             </td>
-                                            <td class="cart-product-subtotal" style="width: 18%; text-align: center;"><p class="soluong" style="font-weight: 400;">{{item.GiaBan }} x {{ item.SoLuong }}</p> </td>
+                                            <td class="cart-product-subtotal" style="width: 18%; text-align: center;"><span class="soluong cart-product-subtotal-content" style="font-weight: 400;">{{item.GiaBan }} x {{ item.SoLuong }}</span> </td>
                                             <td class="cart-product-remove" style="width: 10%; text-align: center;"><a href="{% url 'delete_product_cart' id=item.id %}">x</a></td>
                                         </tr>
                                     {% endfor %}

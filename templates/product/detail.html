@@ -32,25 +32,25 @@
             <div class="col-lg-12 col-md-12">
                 <div class="ltn__shop-details-inner">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-lg-6">
                             <div class="ltn__shop-details-img-gallery ltn__shop-details-img-gallery-2">
                                 <div
                                     class="ltn__shop-details-small-img slick-arrow-2 slick-initialized slick-slider slick-vertical">
-                                    <div aria-live="polite" class="slick-list draggable" style="height: 648.752px;">
+                                    <div aria-live="polite" class="slick-list draggable">
                                         <div class="single-small-img">
-                                            <img style="width: 114px; height: 118px;" src="{{ sanpham.AnhChinh.url }}" alt="Image">
+                                            <img src="{{ sanpham.AnhChinh.url }}" alt="Image">
                                         </div>
                                         <div class="single-small-img">
-                                            <img style="width: 114px; height: 118px;" src="{{ sanpham.AnhPhu1.url }}" alt="Image">
+                                            <img src="{{ sanpham.AnhPhu1.url }}" alt="Image">
                                         </div>
                                         <div class="single-small-img">
-                                            <img style="width: 114px; height: 118px;" src="{{ sanpham.AnhPhu2.url }}" alt="Image">
+                                            <img src="{{ sanpham.AnhPhu2.url }}" alt="Image">
                                         </div>
                                         <div class="single-small-img">
-                                            <img style="width: 114px; height: 118px;" src="{{ sanpham.AnhPhu3.url }}" alt="Image">
+                                            <img src="{{ sanpham.AnhPhu3.url }}" alt="Image">
                                         </div>
                                         <div class="single-small-img">
-                                            <img style="width: 114px; height: 118px;" src="{{ sanpham.AnhChinh.url }}" alt="Image">
+                                            <img src="{{ sanpham.AnhChinh.url }}" alt="Image">
                                         </div>
                                     </div>
 
@@ -60,14 +60,14 @@
                                         <div class="single-large-img">
                                             <a href="#" data-rel="lightcase:myCollection"
                                                 tabindex="0">
-                                                <img style="width: 492px; height: 640px;" src="{{ sanpham.AnhChinh.url }}" alt="Image">
+                                                <img src="{{ sanpham.AnhChinh.url }}" alt="Image">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-lg-6">
                             <div class="modal-product-info shop-details-info pl-0">
                                 <h3 class="animated fadeIn">{{ sanpham.TenSanPham }}</h3>
                                 <div class="product-price-ratting mb-20">
@@ -179,7 +179,7 @@
                 <div class="col-xl-3 col-sm-4 col-12">
                     <div class="ltn__product-item text-center">
                         <div class="product-img">
-                            <a href="{% url 'detail_product' slug=item.DuongDan %}"><img style="height: 300px; image-rendering: -webkit-optimize-contrast;" src="{{ item.AnhChinh.url }}" alt="#"></a>
+                            <a href="{% url 'detail_product' slug=item.DuongDan %}"><img src="{{ item.AnhChinh.url }}" alt="#"></a>
                             <div class="product-badge">
                                 <ul>
                                     <li class="badge-1">- {{ item.PhanTramGiam }}%</li>

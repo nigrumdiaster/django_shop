@@ -13,16 +13,16 @@
     border-image-slice: 1;
 }
 
-@mixin text-gradient ($left, $right) {
+@mixin text-gradient($left, $right) {
     background: -webkit-linear-gradient(-25deg, $left 0%, $right 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 @mixin gradient-left-right($leftColor, $rightColor) {
-    background-image: -moz-linear-gradient( 0deg, $leftColor 0%, $rightColor 100%);
-    background-image: -webkit-linear-gradient( 0deg, $leftColor 0%, $rightColor 100%);
-    background-image: -ms-linear-gradient( 0deg, $leftColor 0%, $rightColor 100%);
+    background-image: -moz-linear-gradient(0deg, $leftColor 0%, $rightColor 100%);
+    background-image: -webkit-linear-gradient(0deg, $leftColor 0%, $rightColor 100%);
+    background-image: -ms-linear-gradient(0deg, $leftColor 0%, $rightColor 100%);
 }
 
 @mixin gradient-top-bottom($from, $to) {
@@ -32,10 +32,10 @@
     background-image: -webkit-linear-gradient($from, $to);
     background-image: -o-linear-gradient($from, $to);
 }
-@mixin hostgr ($left,$right) {
-    background-image: -moz-linear-gradient( 90deg, $left 0%, $right 92%);
-    background-image: -webkit-linear-gradient( 90deg, $left 0%, $right 92%);
-    background-image: -ms-linear-gradient( 90deg, $left 0%, $right 92%);
+@mixin hostgr($left, $right) {
+    background-image: -moz-linear-gradient(90deg, $left 0%, $right 92%);
+    background-image: -webkit-linear-gradient(90deg, $left 0%, $right 92%);
+    background-image: -ms-linear-gradient(90deg, $left 0%, $right 92%);
 }
 /* Single side border-radius  */
 @mixin border-top-radius($radius) {
@@ -151,7 +151,7 @@
 }
 
 /* rotate */
-@mixin rotate ($deg) {
+@mixin rotate($deg) {
     @include transform(rotate(#{$deg}deg));
 }
 
@@ -161,29 +161,35 @@
 }
 
 /* translate */
-@mixin translate ($x, $y) {
+@mixin translate($x, $y) {
     @include transform(translate($x, $y));
 }
 
-@mixin translateX ($x) {
+@mixin translateX($x) {
     @include transform(translateX($x));
 }
 
-@mixin translateY ($y) {
+@mixin translateY($y) {
     @include transform(translateY($y));
 }
 
 /* translate rotate */
-@mixin translate-rotate ($x, $y, $deg) {
-    @include transform(translate($x, $y)rotate(#{$deg}deg));
+@mixin translate-rotate($x, $y, $deg) {
+    @include transform(translate($x, $y) rotate(#{$deg}deg));
 }
 
 /* skew */
-@mixin skew ($x, $y) {
+@mixin skew($x, $y) {
     @include transform(skew(#{$x}deg, #{$y}deg));
 }
 
-@mixin rotate3d($vector-x: $default-vector-x, $vector-y: $default-vector-y, $vector-z: $default-vector-z, $rotate: $default-rotate, $perspective: false) {
+@mixin rotate3d(
+    $vector-x: $default-vector-x,
+    $vector-y: $default-vector-y,
+    $vector-z: $default-vector-z,
+    $rotate: $default-rotate,
+    $perspective: false
+) {
     $trans: rotate3d($vector-x, $vector-y, $vector-z, $rotate);
     @if $perspective {
         $trans: perspective($perspective) $trans;
@@ -213,8 +219,7 @@
         -webkit-box-shadow: inset $top $left $blur $color;
         -moz-box-shadow: inset $top $left $blur $color;
         box-shadow: inset $top $left $blur $color;
-    }
-    @else {
+    } @else {
         -webkit-box-shadow: $top $left $blur $color;
         -moz-box-shadow: $top $left $blur $color;
         box-shadow: $top $left $blur $color;
@@ -275,4 +280,14 @@
     -o-transform: skewY($deg);
     -ms-transform: skewY($deg);
     transform: skewY($deg);
+}
+
+// Custom text overflow ellipsis
+@mixin text-truncated($line-clamp) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line-clamp;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
 }
