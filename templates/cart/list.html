@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block content%}
+<div class="ltn__utilize-overlay"></div>
+<div class="ltn__breadcrumb-area ltn__breadcrumb-area-4 ltn__breadcrumb-color-white---">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn__breadcrumb-inner text-center">
+                    <h1 class="ltn__page-title">Giỏ Hàng</h1>
+                    <div class="ltn__breadcrumb-list">
+                        <ul>
+                            <li><a href="{% url 'home' %}">Trang Chủ</a></li>
+                            <li>Giỏ Hàng</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="liton__shoping-cart-area mb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shoping-cart-inner">
+                    <div class="shoping-cart-table table-responsive">
+                        <table class="table">
+                            <thead>
+                                <th class="cart-product-image" style="width: 18%; text-align: center;">Hình Ảnh</th>
+                                <th class="cart-product-info" style="width: 18%; text-align: center;">Tên Sản Phẩm</th>
+                                <th class="cart-product-quantity" style="width: 18%; text-align: center;">Số Lượng</th>
+                                <th class="cart-product-subtotal" style="width: 18%; text-align: center;">Tổng Tiền</th>
+                                <th class="cart-product-remove" style="width: 10%; text-align: center;">Xóa</th>
+                            </thead>
+                            <tbody>
+                                {% if giohang.count >= 1%}
+                                    {% for item in giohang %}
+                                        <tr>
+                                            <td class="cart-product-image" style="width: 18%; text-align: center;"s>
+                                                <a href="{% url 'detail_product' slug=item.SanPham.DuongDan %}"
+                                                    ><img
+                                                        src="{{ item.SanPham.AnhChinh.url }}" alt="#"></a>
+                                            </td>
+                                            <td class="cart-product-info" style="width: 18%; text-align: center;">
+                                                <h6 class="cart-product-name"><a href="{% url 'detail_product' slug=item.SanPham.DuongDan %}"
+                                                        >{{ item.SanPham.TenSanPham}}</a></h6>
+                                            </td>
+                                            <td class="cart-product-quantity" style="width: 18%; text-align: center;">
+                                                <div class="cart-product-quantity-content">
+                                                    <input type="number" min="1" value="{{ item.SoLuong }}" id="myInput" name="qtybutton"
+                                                    class="{{ item.id}} cart-plus-minus-box" style="border: solid 1.5px #9d9d9d; width: 30%; border-radius: 5px; text-align: center;">
+                                                </div>
+                                            </td>
+                                            <td class="cart-product-subtotal" style="width: 18%; text-align: center;"><span class="soluong cart-product-subtotal-content" style="font-weight: 400;">{{item.GiaBan }} x {{ item.SoLuong }}</span> </td>
+                                            <td class="cart-product-remove" style="width: 10%; text-align: center;"><a href="{% url 'delete_product_cart' id=item.id %}">x</a></td>
+                                        </tr>
+                                    {% endfor %}
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% if giohang.count >= 1%}
+                        <div class="shoping-cart-total mt-50">
+                            <h4>Tổng Tiền</h4>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Tổng Đơn</td>
+                                        <td>{{ total_price }}đ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phí Ship</td>
+                                        <td>
+                                            {{ phiship }}đ
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vat</td>
+                                        <td>
+                                            {{ phivat }}%
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Số Tiền Thanh Toán</strong></td>
+                                        <td><strong>{{ thanhtoan }}đ</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <div class="btn-wrapper text-right">
+                                <a href="{% url 'pay_cart' %}" class="theme-btn-1 btn btn-effect-1 thanhtoan">Thanh Toán</a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <br>
+                        <br>
+                        <p style="text-align: center;">Giỏ Hàng Hiện Đang Trống!</p>
+                        <br>
+                        <div class="text-center">
+                            <a class="btn btn-success" href="{% url 'product' %}">MUA SẮM SẢN PHẨM</a> 
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% csrf_token %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+    $(document).ready(function(){
+        
+        $('.cart-plus-minus-box').on('change', function() {
+            var soluong = $(this).val();
+            var magiohang = $(this).first().attr("class").split(" ")[0]
+
+            $.post("{% url 'update_number_cart' %}", 
+                {magiohang, soluong, csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val()},
+                function(result){
+                    var keys = Object.keys(result)
+                    if (keys[0] == "error"){
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: 'Oops...!',
+                            text: result.error,
+                            showConfirmButton: false,
+                            timer: 1500,
+                            backdrop: false, 
+                          });
+                        return
+                    }
+
+                    if (keys[0] == "success"){
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Thành công!',
+                            text: result.success,
+                            showConfirmButton: false,
+                            timer: 1500,
+                            backdrop: false, 
+                          }).then(() => {
+                            location.reload(true);
+                        });
+                    }
+                }
+            )
+        });
+
+        
+        $(".thanhtoan").click(function(e){
+            $.post("{% url 'check_property_product' %}", {csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val()},
+            function(result){
+                var keys = Object.keys(result)
+                if (keys[0] == "error"){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: 'Oops...!',
+                        text: result.error,
+                        showConfirmButton: false,
+                        timer: 1500,
+                        backdrop: false, 
+                      }).then(() => {
+                        location.reload(true);
+                    })
+                    return
+                }
+            })
+        })
+    });
+</script>
+
+{% endblock content%}
