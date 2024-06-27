@@ -1,1 +1,17 @@
 /.vs
+cart/__pycache__
+cart/migrations
+category/__pycache__
+contact/__pycache__
+contact/migrations
+customer/__pycache__
+customer/migrations
+django_shop/__pycache__
+news/__pycache__
+news/migrations
+order/__pycache__
+order/migrations
+product/__pycache__
+product/migrations
+website/__pycache__
+website/migrations
